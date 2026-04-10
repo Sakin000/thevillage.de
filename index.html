@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Village Café & Play </title>
+  <meta name="description" content="A sanctuary for parents, a world of play for children. Premium indoor play-café opening in Bonn 2028. Join the founding 100 members." />
+  <meta property="og:title" content="The Village Café &amp; Play" />
+  <meta property="og:description" content="They say it takes a village. We built one. Coming to Bonn in 2028." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+:root{--sage:#7D8E7E;--sage-l:#A3B4A4;--sage-d:#5C6B5D;--terra:#C97D60;--terra-l:#DFA085;--terra-d:#A85E42;--cream:#F9F6F0;--cream-d:#EDE9E3;--dark:#2A2723;--dark-m:#3E3B37;--mid:#6B6560;--border:rgba(125,142,126,.18);--ff-serif:'Playfair Display',Georgia,serif;--ff-sans:'DM Sans',system-ui,sans-serif;--mw:1000px;--r:3px;--t:.25s ease}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--dark);font-family:var(--ff-sans);font-weight:400;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+h1,h2,h3,h4{font-family:var(--ff-serif);font-weight:400;line-height:1.2}
+h1{font-size:clamp(2.6rem,5.5vw,4.2rem)}
+h2{font-size:clamp(2rem,4vw,3rem)}
+h4{font-size:1.05rem;font-family:var(--ff-sans);font-weight:500}
+em{font-style:italic}
+p{color:var(--mid);font-weight:300}
+.eyebrow{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--sage);font-weight:500;margin-bottom:.75rem;font-family:var(--ff-sans)}
+.eyebrow.light{color:rgba(255,255,255,.6)}
+.eyebrow.terra{color:var(--terra-l)}
+.container{max-width:var(--mw);margin:0 auto;padding:0 2rem}
+section{padding:6rem 2rem}
+.section-header{text-align:center;margin-bottom:4rem}
+.section-header h2{margin-bottom:.75rem}
+.section-sub{max-width:520px;margin:0 auto;font-weight:300}
+.btn-primary{background:var(--terra);color:#fff;border:none;padding:13px 28px;font-family:var(--ff-sans);font-size:13px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;cursor:pointer;border-radius:var(--r);transition:background var(--t),transform var(--t);white-space:nowrap}
+.btn-primary:hover{background:var(--terra-d);transform:translateY(-1px)}
+.btn-outline{background:transparent;color:var(--dark);border:1px solid rgba(42,39,35,.35);padding:12px 28px;font-family:var(--ff-sans);font-size:13px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;cursor:pointer;border-radius:var(--r);transition:all var(--t);white-space:nowrap}
+.btn-outline:hover{border-color:var(--dark);background:rgba(42,39,35,.04);transform:translateY(-1px)}
+.btn-ghost{background:transparent;color:var(--dark);border:1px solid rgba(42,39,35,.25);padding:12px 24px;font-family:var(--ff-sans);font-size:13px;letter-spacing:.07em;text-transform:uppercase;cursor:pointer;border-radius:var(--r);transition:all var(--t)}
+.btn-ghost:hover{border-color:var(--sage);color:var(--sage)}
+/* NAV */
+#navbar{position:sticky;top:0;z-index:100;background:rgba(249,246,240,.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:.5px solid var(--border);transition:box-shadow .3s}
+#navbar.scrolled{box-shadow:0 2px 20px rgba(0,0,0,.06)}
+.nav-inner{max-width:var(--mw);margin:0 auto;padding:0 2rem;height:64px;display:flex;align-items:center;justify-content:space-between;gap:2rem}
+.nav-logo{font-family:var(--ff-serif);font-size:18px;text-decoration:none;color:var(--dark);flex-shrink:0}
+.nav-links{display:flex;gap:2.5rem;list-style:none;margin-left:auto}
+.nav-links a{text-decoration:none;color:var(--mid);font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:500;transition:color var(--t)}
+.nav-links a:hover{color:var(--dark)}
+.nav-cta{margin-left:1.5rem}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+.nav-hamburger span{display:block;width:22px;height:1.5px;background:var(--dark);transition:all .25s}
+.nav-mobile{display:none;flex-direction:column;padding:1rem 2rem 1.5rem;border-top:.5px solid var(--border);gap:.25rem}
+.nav-mobile a{text-decoration:none;color:var(--mid);font-size:13px;letter-spacing:.06em;text-transform:uppercase;padding:10px 0;border-bottom:.5px solid var(--border)}
+.nav-mobile .mobile-cta{color:var(--terra);font-weight:500;border-bottom:none;margin-top:.5rem}
+.nav-mobile.open{display:flex}
+/* HERO */
+#hero{min-height:calc(100vh - 64px);display:flex;flex-direction:column;justify-content:center;padding:4rem 2rem 3rem;position:relative;overflow:hidden}
+.hero-bg-lines{position:absolute;inset:0;background-image:linear-gradient(to right,rgba(125,142,126,.06) 1px,transparent 1px),linear-gradient(to bottom,rgba(125,142,126,.06) 1px,transparent 1px);background-size:80px 80px;pointer-events:none}
+.hero-inner{max-width:var(--mw);margin:0 auto;width:100%;display:grid;grid-template-columns:1.1fr .9fr;gap:5rem;align-items:center}
+.hero-text .eyebrow{margin-bottom:1.5rem}
+.hero-text h1{color:var(--dark);margin-bottom:1.5rem}
+.hero-text h1 em{color:var(--terra)}
+.hero-sub{font-size:1.05rem;margin-bottom:2.5rem;max-width:460px;font-weight:300;color:var(--mid)}
+.hero-cta-group{display:flex;gap:1rem;margin-bottom:1.5rem;flex-wrap:wrap}
+.hero-note{font-size:12px;color:var(--sage);font-weight:400}
+.hero-visual{position:relative;display:flex;justify-content:center}
+.hero-card{background:#fff;border:.5px solid var(--border);border-radius:8px;overflow:hidden;width:100%;max-width:320px;box-shadow:0 8px 40px rgba(125,142,126,.1)}
+.hero-card-top{background:var(--cream-d);padding:2.5rem;display:flex;justify-content:center;align-items:center}
+.village-logo-svg{width:110px;height:110px}
+.hero-card-body{padding:1.5rem}
+.card-label{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--sage);font-weight:500;margin-bottom:.4rem}
+.card-count{font-family:var(--ff-serif);font-size:2.8rem;color:var(--dark);line-height:1;margin-bottom:.75rem}
+.progress-bar{height:3px;background:var(--cream-d);border-radius:2px;overflow:hidden}
+.progress-fill{height:100%;background:var(--terra);border-radius:2px;width:0%;transition:width 1.2s cubic-bezier(.4,0,.2,1)}
+.hero-floater{position:absolute;background:#fff;border:.5px solid var(--border);border-radius:20px;padding:6px 14px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--mid);font-weight:500;box-shadow:0 2px 12px rgba(0,0,0,.06);animation:float 4s ease-in-out infinite}
+.f1{top:10%;right:-20px;animation-delay:0s}.f2{bottom:20%;right:-30px;animation-delay:1.4s}.f3{bottom:5%;left:0;animation-delay:.7s}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.scroll-hint{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px}
+.scroll-hint span{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--sage-l)}
+.scroll-line{width:1px;height:40px;background:linear-gradient(to bottom,var(--sage-l),transparent);animation:sp 2s ease-in-out infinite}
+@keyframes sp{0%,100%{opacity:.3}50%{opacity:.8}}
+/* STORY */
+.story-grid{max-width:var(--mw);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.story-text h2{margin-bottom:1.5rem}
+.story-text p{margin-bottom:1rem}
+.story-text em{color:var(--dark);font-style:italic}
+blockquote{border-left:2px solid var(--terra);padding-left:1.5rem;margin-top:2rem}
+blockquote p{font-family:var(--ff-serif);font-size:1.25rem;font-style:italic;color:var(--dark);line-height:1.5;font-weight:400}
+.story-stats{display:flex;flex-direction:column;gap:1rem}
+.stat-card{background:var(--cream);padding:1.5rem;border-radius:var(--r);border:.5px solid var(--border)}
+.stat-card.accent{background:var(--cream-d)}
+.stat-num{display:block;font-family:var(--ff-serif);font-size:2.2rem;color:var(--terra);line-height:1;margin-bottom:6px}
+.stat-card.accent .stat-num{font-size:1.4rem}
+.stat-label{display:block;font-size:13px;color:var(--mid);line-height:1.5}
+/* PLAY */
+.play-grid{max-width:var(--mw);margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.play-card{background:#fff;padding:1.75rem;border-radius:var(--r);border:.5px solid var(--border);transition:transform var(--t),box-shadow var(--t)}
+.play-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.06)}
+.play-icon{width:44px;height:44px;background:var(--cream-d);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;color:var(--sage)}
+.play-icon svg{width:20px;height:20px}
+.play-card h4{color:var(--dark);margin-bottom:.5rem}
+.play-card p{font-size:13.5px;line-height:1.65}
+/* BOOKING */
+.booking-inner{max-width:var(--mw);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.booking-text h2{margin-bottom:1rem}
+.booking-text p{margin-bottom:1.25rem}
+.booking-info-list{list-style:none;margin:1.5rem 0 2rem}
+.booking-info-list li{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--mid);padding:8px 0;border-bottom:.5px solid var(--border)}
+.booking-info-list li:last-child{border-bottom:none}
+.binfo-dot{width:8px;height:8px;border-radius:50%;background:var(--sage);flex-shrink:0}
+.booking-price-badge{display:inline-flex;align-items:baseline;gap:6px;background:var(--cream-d);border:.5px solid var(--border);padding:10px 18px;border-radius:var(--r);margin-bottom:1.5rem}
+.booking-price-badge .amount{font-family:var(--ff-serif);font-size:2rem;color:var(--terra);line-height:1}
+.booking-price-badge .bl{font-size:12px;color:var(--mid);letter-spacing:.04em}
+.booking-form-card{background:var(--cream);border:.5px solid var(--border);border-radius:6px;padding:2rem;position:sticky;top:84px}
+.booking-form-card>h4{font-size:1.1rem;color:var(--dark);margin-bottom:.25rem}
+.booking-form-card>.sub{font-size:13px;color:var(--mid);margin-bottom:1.75rem}
+.ff{margin-bottom:1.1rem}
+.ff label{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--sage);font-weight:500;margin-bottom:6px}
+.ff input,.ff select{width:100%;padding:11px 14px;background:#fff;border:.5px solid var(--border);color:var(--dark);font-family:var(--ff-sans);font-size:14px;border-radius:var(--r);outline:none;transition:border-color var(--t);appearance:none;-webkit-appearance:none}
+.ff select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B6560' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px;cursor:pointer}
+.ff input:focus,.ff select:focus{border-color:var(--sage)}
+.ff input.error,.ff select.error{border-color:var(--terra)}
+.ff-row{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+.booking-total{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-top:.5px solid var(--border);border-bottom:.5px solid var(--border);margin:1.25rem 0}
+.booking-total span{font-size:13px;color:var(--mid)}
+.booking-total strong{font-family:var(--ff-serif);font-size:1.4rem;color:var(--dark)}
+.bk-submit{width:100%;padding:14px;font-size:14px}
+.bk-note{font-size:11.5px;color:var(--mid);text-align:center;margin-top:.75rem}
+.bk-success{display:none;text-align:center;padding:1.5rem 0}
+.bk-success-icon{font-size:2.5rem;margin-bottom:.75rem}
+.bk-success h4{font-size:1.3rem;color:var(--dark);margin-bottom:.5rem}
+.bk-success p{font-size:13.5px;color:var(--mid)}
+.bk-ref{display:inline-block;background:var(--cream-d);border:.5px solid var(--border);padding:6px 14px;border-radius:var(--r);font-size:12px;letter-spacing:.08em;color:var(--sage);margin-top:.75rem;font-weight:500}
+/* PRICING */
+.pricing-grid{max-width:var(--mw);margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;align-items:start}
+.price-card{border:.5px solid var(--border);padding:2rem 1.75rem;border-radius:4px;position:relative;background:#fff;transition:box-shadow var(--t)}
+.price-card:hover{box-shadow:0 8px 32px rgba(0,0,0,.06)}
+.price-card.featured{border:1.5px solid var(--terra);background:var(--cream);transform:translateY(-4px)}
+.featured-badge{position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:var(--terra);color:#fff;font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:5px 14px;border-radius:0 0 6px 6px;white-space:nowrap;font-weight:500}
+.price-tier-label{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--sage);font-weight:500;margin-bottom:.4rem}
+.price-name{font-size:1.35rem;margin-bottom:.75rem;color:var(--dark)}
+.price-amount{font-size:2.6rem;font-weight:500;color:var(--dark);line-height:1;margin-bottom:.5rem}
+.price-currency{font-size:1.4rem;vertical-align:super;font-weight:400}
+.price-period{font-size:1rem;font-weight:300;color:var(--mid)}
+.price-desc{font-size:12.5px;color:var(--mid);margin-bottom:1.25rem}
+.price-divider{height:.5px;background:var(--cream-d);margin:1.25rem 0}
+.price-perks{list-style:none;margin-bottom:1.75rem}
+.price-perks li{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--mid);padding:5px 0}
+.perk-check{flex-shrink:0;width:16px;height:16px;border-radius:50%;background:rgba(125,142,126,.15);display:flex;align-items:center;justify-content:center;margin-top:2px}
+.perk-check::after{content:'';display:block;width:6px;height:5px;border-left:1.5px solid var(--sage);border-bottom:1.5px solid var(--sage);transform:rotate(-45deg) translateY(-1px)}
+.price-btn{width:100%}
+/* TIMELINE */
+.timeline-track{max-width:620px;margin:0 auto;position:relative}
+.milestone{display:flex;gap:1.5rem;align-items:flex-start}
+.milestone-left{display:flex;flex-direction:column;align-items:center;flex-shrink:0}
+.milestone-dot{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;font-weight:500}
+.milestone-dot svg{width:18px;height:18px}
+.done .milestone-dot{background:var(--sage);color:#fff}
+.active .milestone-dot{background:var(--terra);color:#fff}
+.pending .milestone-dot{background:#fff;border:1.5px solid rgba(125,142,126,.3);color:var(--mid)}
+.milestone-dot.home{background:var(--dark);color:#fff}
+.milestone-line{width:1px;flex:1;min-height:36px;background:rgba(125,142,126,.2);margin:4px 0}
+.last .milestone-line{display:none}
+.milestone-content{padding:6px 0 2rem;flex:1}
+.milestone-date{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--sage-l);font-weight:500;display:block;margin-bottom:4px}
+.milestone-content h4{color:var(--dark);margin-bottom:4px}
+.milestone-content p{font-size:13.5px;margin-bottom:8px}
+.milestone-status{display:inline-block;font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border-radius:2px;font-weight:500}
+.done-status{background:rgba(125,142,126,.15);color:var(--sage-d)}
+.active-status{background:rgba(201,125,96,.15);color:var(--terra-d)}
+.pending-status{background:rgba(42,39,35,.06);color:var(--mid)}
+.opening-status{background:var(--dark);color:#fff}
+/* POLL */
+#poll{background:var(--sage);color:#fff;text-align:center}
+.poll-inner h2{color:#fff;margin-bottom:.75rem}
+.poll-inner>p{color:rgba(255,255,255,.72);margin-bottom:2.5rem;font-weight:300}
+.poll-options{display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center;max-width:680px;margin:0 auto 1.5rem}
+.poll-btn{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);color:#fff;padding:10px 20px;font-size:13px;font-family:var(--ff-sans);cursor:pointer;border-radius:2px;transition:all .2s}
+.poll-btn:hover,.poll-btn.selected{background:rgba(255,255,255,.22);border-color:rgba(255,255,255,.5);transform:translateY(-1px)}
+.poll-result{font-family:var(--ff-serif);font-size:1.2rem;font-style:italic;color:rgba(255,255,255,.9);min-height:1.8rem;transition:opacity .4s}
+/* WAITLIST */
+#waitlist{background:var(--dark);color:#fff}
+.waitlist-inner{max-width:620px;margin:0 auto;text-align:center}
+.waitlist-inner h2{color:#fff;margin-bottom:.75rem}
+.waitlist-sub{color:rgba(255,255,255,.55);font-weight:300;margin-bottom:2.5rem}
+.founding-box{background:rgba(201,125,96,.08);border:.5px solid rgba(201,125,96,.25);padding:1.5rem;border-radius:4px;margin-bottom:2.5rem;display:flex;gap:1rem;align-items:flex-start;text-align:left}
+.fi{font-size:1.5rem;flex-shrink:0;margin-top:2px}
+.founding-box strong{display:block;color:var(--terra-l);margin-bottom:.4rem;font-size:14px;font-weight:500}
+.founding-box p{font-size:13px;color:rgba(255,255,255,.55);line-height:1.6}
+#waitlist-form{width:100%}
+.wl-row{display:flex;gap:.75rem;margin-bottom:1rem;flex-wrap:wrap}
+.wl-g{flex:1;min-width:180px}
+.wl-g input,#waitlist-form input[type="email"],#waitlist-form input[type="text"]{width:100%;padding:13px 16px;background:rgba(255,255,255,.07);border:.5px solid rgba(255,255,255,.18);color:#fff;font-family:var(--ff-sans);font-size:14px;border-radius:var(--r);outline:none;transition:border-color var(--t)}
+.wl-g input::placeholder,#waitlist-form input::placeholder{color:rgba(255,255,255,.3)}
+.wl-g input:focus,#waitlist-form input:focus{border-color:rgba(255,255,255,.4)}
+.tier-row{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;margin-bottom:1rem}
+.tier-radio{display:flex;align-items:center;gap:6px;cursor:pointer;font-size:12px;color:rgba(255,255,255,.5);transition:color var(--t)}
+.tier-radio input[type="radio"]{accent-color:var(--terra);cursor:pointer}
+.tier-radio:has(input:checked){color:rgba(255,255,255,.85)}
+.fn{font-size:11.5px;color:rgba(255,255,255,.3);text-align:center;margin-top:.75rem}
+.success-block{text-align:center;padding:2rem 0}
+.success-icon{font-size:2.5rem;margin-bottom:.75rem}
+.success-title{font-family:var(--ff-serif);font-size:1.8rem;color:#fff;margin-bottom:.5rem}
+.wl-count{font-size:12px;color:rgba(255,255,255,.3);margin-top:1.5rem;text-align:center}
+.wl-count strong{color:var(--terra-l)}
+/* FOOTER */
+#footer{background:var(--dark-m);padding:4rem 2rem 2rem}
+.footer-grid{max-width:var(--mw);margin:0 auto 3rem;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:3rem}
+.footer-logo{font-family:var(--ff-serif);font-size:1.4rem;color:#fff;margin-bottom:.75rem}
+.footer-brand p{font-size:13px;color:rgba(255,255,255,.35);font-weight:300}
+.footer-links h5,.footer-nl h5{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:1rem;font-family:var(--ff-sans);font-weight:500}
+.footer-links{display:flex;flex-direction:column}
+.footer-links a{font-size:13px;color:rgba(255,255,255,.5);text-decoration:none;padding:4px 0;transition:color var(--t)}
+.footer-links a:hover{color:rgba(255,255,255,.85)}
+.footer-nl p{font-size:13px;color:rgba(255,255,255,.35);margin-bottom:1rem;font-weight:300}
+.footer-btn{color:rgba(255,255,255,.6);border-color:rgba(255,255,255,.2);font-size:11px;padding:10px 20px}
+.footer-btn:hover{color:#fff;border-color:rgba(255,255,255,.5);background:transparent}
+.footer-bottom{max-width:var(--mw);margin:0 auto;border-top:.5px solid rgba(255,255,255,.07);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+.footer-bottom p{font-size:11px;color:rgba(255,255,255,.2)}
+/* ANIMATIONS */
+[data-animate]{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease}
+[data-animate].in-view{opacity:1;transform:translateY(0)}
+/* RESPONSIVE */
+@media(max-width:768px){
+  section{padding:4rem 1.5rem}
+  .nav-links,.nav-cta{display:none}
+  .nav-hamburger{display:flex}
+  .hero-inner{grid-template-columns:1fr;gap:3rem}
+  .hero-visual{display:none}
+  h1{font-size:2.6rem}
+  .story-grid,.booking-inner{grid-template-columns:1fr;gap:3rem}
+  .play-grid{grid-template-columns:1fr 1fr}
+  .pricing-grid{grid-template-columns:1fr}
+  .price-card.featured{transform:none}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:2rem}
+  .footer-bottom{flex-direction:column;text-align:center}
+  .wl-row{flex-direction:column}
+  .wl-row .btn-primary{width:100%;text-align:center}
+  .booking-form-card{position:static}
+}
+@media(max-width:520px){
+  .play-grid,.footer-grid{grid-template-columns:1fr}
+  .founding-box{flex-direction:column}
+  .tier-row{flex-direction:column;align-items:center}
+  .hero-cta-group{flex-direction:column}
+  .hero-cta-group button{width:100%;text-align:center}
+  .ff-row{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">The Village Café & Play</a>
+    <ul class="nav-links">
+      <li><a href="#play">The Space</a></li>
+      <li><a href="#booking">Book a Visit</a></li>
+      <li><a href="#pricing">Membership</a></li>
+      <li><a href="#timeline">Journey</a></li>
+    </ul>
+    <button class="btn-primary nav-cta" onclick="smoothTo('waitlist')">Join the Waitlist</button>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="nav-mobile" id="nav-mobile">
+    <a href="#play" onclick="closeMenu()">The Space</a>
+    <a href="#booking" onclick="closeMenu()">Book a Visit</a>
+    <a href="#pricing" onclick="closeMenu()">Membership</a>
+    <a href="#timeline" onclick="closeMenu()">Journey</a>
+    <a href="#waitlist" class="mobile-cta" onclick="closeMenu()">Join the Waitlist</a>
+  </div>
+</nav>
+
+<section id="hero">
+  <div class="hero-bg-lines" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <div class="hero-text" data-animate>
+      <p class="eyebrow">Opening 2028 · Bonn, Germany</p>
+      <h1>They say it takes<br>a village.<br><em>We built one.</em></h1>
+      <p class="hero-sub">A sanctuary for parents, a world of play for children. A premium third space where stunning design meets genuine community.</p>
+      <div class="hero-cta-group">
+        <button class="btn-primary" onclick="smoothTo('waitlist')">Join the Founding 100</button>
+        <button class="btn-ghost" onclick="smoothTo('booking')">Book a Day Visit · €9</button>
+      </div>
+      <p class="hero-note">🌿 First 100 members receive a permanent 20% lifetime discount</p>
+    </div>
+    <div class="hero-visual" data-animate data-delay="200">
+      <div class="hero-card">
+        <div class="hero-card-top">
+          <svg class="village-logo-svg" viewBox="0 0 120 120" fill="none" aria-hidden="true">
+            <circle cx="60" cy="60" r="55" stroke="#7D8E7E" stroke-width=".75" opacity=".4"/>
+            <path d="M60 20 C38 38 33 55 60 66 C87 55 82 38 60 20Z" fill="#7D8E7E" opacity=".45"/>
+            <line x1="60" y1="66" x2="60" y2="100" stroke="#7D8E7E" stroke-width="1.5" opacity=".4"/>
+            <circle cx="38" cy="88" r="15" fill="#C97D60" opacity=".22"/>
+            <circle cx="83" cy="84" r="11" fill="#7D8E7E" opacity=".22"/>
+            <circle cx="60" cy="66" r="4.5" fill="#C97D60" opacity=".6"/>
+          </svg>
+        </div>
+        <div class="hero-card-body">
+          <p class="card-label">Founding spots remaining</p>
+          <p class="card-count" id="spots-count">100</p>
+          <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+        </div>
+      </div>
+      <div class="hero-floater f1">Specialty Coffee</div>
+      <div class="hero-floater f2">Sustainable Play</div>
+      <div class="hero-floater f3">Community</div>
+    </div>
+  </div>
+  <div class="scroll-hint" aria-hidden="true"><span>Scroll</span><div class="scroll-line"></div></div>
+</section>
+
+<section id="story" style="background:#fff;padding:6rem 2rem">
+  <div class="story-grid">
+    <div class="story-text" data-animate>
+      <p class="eyebrow">Our story</p>
+      <h2>The hardest part of parenthood nobody talks about</h2>
+      <p>You love your child completely. But somewhere between the nappy bag and the third cold coffee, something went missing — <em>you</em>.</p>
+      <p>Existing cafés offer a plastic toy box shoved in the corner. Parents deserve better. We're building a beautifully designed third space where the play infrastructure is woven into the architecture itself — and where adults are treated like adults.</p>
+      <blockquote><p>"Not a café with a toy box. A lounge with a world built into it."</p></blockquote>
+    </div>
+    <div class="story-stats" data-animate data-delay="150">
+      <div class="stat-card"><span class="stat-num">67%</span><span class="stat-label">of new parents report significant social isolation in the first year</span></div>
+      <div class="stat-card"><span class="stat-num">0</span><span class="stat-label">premium third spaces designed specifically for parents in most European cities</span></div>
+      <div class="stat-card accent"><span class="stat-num">The Village</span><span class="stat-label">FSC-certified sustainable play · specialty coffee · community programming · membership built on belonging</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="play" style="background:var(--cream-d)">
+  <div class="container">
+    <div class="section-header" data-animate>
+      <p class="eyebrow">Sustainable play</p>
+      <h2>Designed for wonder.<br>Built to last.</h2>
+      <p class="section-sub">Every element chosen with intention — beautiful, safe, and kind to the planet.</p>
+    </div>
+    <div class="play-grid">
+      <div class="play-card" data-animate data-delay="0">
+        <div class="play-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L8 8H4l3 5-1.5 6H12l1.5-6L17 13h-4L12 2z"/></svg></div>
+        <h4>FSC-certified timber</h4>
+        <p>Every climbing structure, shelf, and toy crafted from responsibly sourced wood. Zero plastics in the play zone.</p>
+      </div>
+      <div class="play-card" data-animate data-delay="80">
+        <div class="play-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h4>Safety-first design</h4>
+        <p>Rounded edges, non-toxic finishes, soft-play integrated flooring. Certified to EU toy safety standard EN 71.</p>
+      </div>
+      <div class="play-card" data-animate data-delay="160">
+        <div class="play-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3"/></svg></div>
+        <h4>The adult lounge</h4>
+        <p>Specialty coffee, seasonal menu, and actual comfortable seating — with sightlines to the play area throughout.</p>
+      </div>
+      <div class="play-card" data-animate data-delay="240">
+        <div class="play-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+        <h4>Biophilic architecture</h4>
+        <p>Natural light, living walls, and materials that breathe. Designed by architects who are parents themselves.</p>
+      </div>
+      <div class="play-card" data-animate data-delay="320">
+        <div class="play-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="7" r="4"/><path d="M3 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg></div>
+        <h4>Age-zoned spaces</h4>
+        <p>Dedicated zones for crawlers, toddlers, and early school-age. No big kids trampling the littles.</p>
+      </div>
+      <div class="play-card" data-animate data-delay="400">
+        <div class="play-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+        <h4>Community programming</h4>
+        <p>Workshops, parent circles, music mornings, birthday celebrations — woven into the weekly calendar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="booking" style="background:#fff">
+  <div class="booking-inner container">
+    <div class="booking-text" data-animate>
+      <p class="eyebrow">Day visit</p>
+      <h2>Book a single visit</h2>
+      <p>Not ready for a membership? Book a one-off day visit for your whole family. Pay once, arrive relaxed.</p>
+      <div class="booking-price-badge">
+        <span class="amount">€9</span>
+        <span class="bl">per person </span>
+      </div>
+      <ul class="booking-info-list">
+        <li><span class="binfo-dot"></span>Open Monday to Sunday, 09:00 – 19:00</li>
+        <li><span class="binfo-dot"></span>Last entry at 18:00 to allow full play time</li>
+        <li><span class="binfo-dot"></span>All ages welcome · no booking fee</li>
+        <li><span class="binfo-dot"></span>Coffee &amp; food available for purchase on the day</li>
+        <li><span class="binfo-dot"></span>Free cancellation up to 24 hours before your visit</li>
+        <li><span class="binfo-dot"></span>Members enjoy unlimited visits — no booking needed</li>
+      </ul>
+      <p style="font-size:13px;color:var(--mid)">Come more than 4 times a month? The <strong style="color:var(--dark);font-weight:500">Neighbor membership at €35/mo</strong> pays for itself.</p>
+    </div>
+
+    <div class="booking-form-card" data-animate data-delay="150">
+      <h4>Reserve your visit</h4>
+      <p class="sub">Confirmation sent to your email instantly.</p>
+      <div id="bk-form-wrap">
+        <div class="ff-row">
+          <div class="ff"><label for="bk-fname">First name</label><input type="text" id="bk-fname" placeholder="Anna" /></div>
+          <div class="ff"><label for="bk-lname">Last name</label><input type="text" id="bk-lname" placeholder="Müller" /></div>
+        </div>
+        <div class="ff"><label for="bk-email">Email address</label><input type="email" id="bk-email" placeholder="anna@example.com" /></div>
+        <div class="ff-row">
+          <div class="ff"><label for="bk-date">Date of visit</label><input type="date" id="bk-date" /></div>
+          <div class="ff">
+            <label for="bk-time">Arrival time</label>
+            <select id="bk-time">
+              <option value="">Choose a slot</option>
+              <option>09:00</option><option>09:30</option><option>10:00</option><option>10:30</option>
+              <option>11:00</option><option>11:30</option><option>12:00</option><option>12:30</option>
+              <option>13:00</option><option>13:30</option><option>14:00</option><option>14:30</option>
+              <option>15:00</option><option>15:30</option><option>16:00</option><option>16:30</option>
+              <option>17:00</option><option>17:30</option><option>18:00</option>
+            </select>
+          </div>
+        </div>
+        <div class="ff">
+          <label for="bk-kids">Number of children</label>
+          <select id="bk-kids">
+            <option value="1">1 Person (€9)</option>
+      <option value="2">2 People (€18)</option>
+      <option value="3">3 People (€27)</option>
+      <option value="4">4 People (€36)</option>
+          </select>
+        </div>
+        <div class="booking-total">
+          <span>Day visit · <span id="kids-lbl">1 child</span></span>
+          <strong></strong>
+        </div>
+        <!-- 
+          ══════════════════════════════════════════════
+          TO TAKE REAL PAYMENTS:
+          1. Create a Stripe account at stripe.com (free)
+          2. Go to Payment Links → Create a link → €9 product
+          3. Replace onclick below with:
+             onclick="window.location.href='https://buy.stripe.com/YOUR_LINK_ID'"
+          Currently shows a confirmation preview — pay on arrival.
+          ══════════════════════════════════════════════
+        -->
+        <button class="btn-primary bk-submit" id="bk-btn" onclick="submitBooking()">Confirm &amp; Reserve</button>
+        <p class="bk-note">No payment taken online — pay on arrival. Free cancellation 24h before.</p>
+      </div>
+      <div class="bk-success" id="bk-success">
+        <div class="bk-success-icon">🌿</div>
+        <h4>Your visit is reserved!</h4>
+        <p>Confirmation sent to <strong id="bk-conf-email"></strong>.<br>We can't wait to welcome your family.</p>
+        <div class="bk-ref" id="bk-ref"></div>
+        <br><br>
+        <button class="btn-outline" style="font-size:12px;padding:8px 18px" onclick="resetBooking()">Book another visit</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing" style="background:var(--cream-d)">
+  <div class="container">
+    <div class="section-header" data-animate>
+      <p class="eyebrow">Village membership</p>
+      <h2>Find your place<br>in the village</h2>
+      <p class="section-sub">All memberships include unlimited play access. Choose the tier that fits your family's rhythm.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="price-card" data-animate data-delay="0">
+        <div class="price-tier-label">Casual</div>
+        <h3 class="price-name">The Neighbor</h3>
+        <div class="price-amount"><span class="price-currency">€</span>35<span class="price-period">/month</span></div>
+        <p class="price-desc">Perfect for regular weekday visits</p>
+        <div class="price-divider"></div>
+        <ul class="price-perks">
+          <li><span class="perk-check"></span>Unlimited weekday entry</li>
+          <li><span class="perk-check"></span>5% café discount</li>
+          <li><span class="perk-check"></span>Village Chat community access</li>
+          <li><span class="perk-check"></span>Monthly newsletter &amp; events calendar</li>
+        </ul>
+        <button class="btn-outline price-btn" onclick="smoothTo('waitlist')">Join waitlist</button>
+      </div>
+      <div class="price-card featured" data-animate data-delay="100">
+        <div class="featured-badge">Most popular</div>
+        <div class="price-tier-label">Frequent</div>
+        <h3 class="price-name">The Resident</h3>
+        <div class="price-amount"><span class="price-currency">€</span>75<span class="price-period">/month</span></div>
+        <p class="price-desc">For families who make it their second home</p>
+        <div class="price-divider"></div>
+        <ul class="price-perks">
+          <li><span class="perk-check"></span>Unlimited daily entry (7 days)</li>
+          <li><span class="perk-check"></span>1 free guest pass per month</li>
+          <li><span class="perk-check"></span>10% café &amp; event discount</li>
+          <li><span class="perk-check"></span>Priority birthday party booking</li>
+          <li><span class="perk-check"></span>All Neighbor perks included</li>
+        </ul>
+        <button class="btn-primary price-btn" onclick="smoothTo('waitlist')">Join waitlist</button>
+      </div>
+      <div class="price-card" data-animate data-delay="200">
+        <div class="price-tier-label">VIP</div>
+        <h3 class="price-name">The Villager</h3>
+        <div class="price-amount"><span class="price-currency">€</span>130<span class="price-period">/month</span></div>
+        <p class="price-desc">Full access. Your name on the door.</p>
+        <div class="price-divider"></div>
+        <ul class="price-perks">
+          <li><span class="perk-check"></span>Everything in Resident</li>
+          <li><span class="perk-check"></span>Unlimited coffee membership</li>
+          <li><span class="perk-check"></span>20% off all events &amp; workshops</li>
+          <li><span class="perk-check"></span>Permanent locker (shoes &amp; bag)</li>
+          <li><span class="perk-check"></span>Founding member recognition wall</li>
+        </ul>
+        <button class="btn-outline price-btn" onclick="smoothTo('waitlist')">Join waitlist</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="timeline" style="background:#fff">
+  <div class="container">
+    <div class="section-header" data-animate>
+      <p class="eyebrow">Our journey</p>
+      <h2>From concept<br>to community</h2>
+      <p class="section-sub">We're building this transparently. Watch every milestone as we move toward opening day.</p>
+    </div>
+    <div class="timeline-track">
+      <div class="milestone done" data-animate>
+        <div class="milestone-left"><div class="milestone-dot"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div><div class="milestone-line"></div></div>
+        <div class="milestone-content"><span class="milestone-date">Q1 2025</span><h4>Concept finalized</h4><p>The Village idea, brand identity, and membership model locked in.</p><span class="milestone-status done-status">Completed</span></div>
+      </div>
+      <div class="milestone active" data-animate data-delay="100">
+        <div class="milestone-left"><div class="milestone-dot"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="3" fill="currentColor"/></svg></div><div class="milestone-line"></div></div>
+        <div class="milestone-content"><span class="milestone-date">Now · 2026</span><h4>Community building</h4><p>Gathering the founding 100 members and conducting community research.</p><span class="milestone-status active-status">In progress</span></div>
+      </div>
+      <div class="milestone pending" data-animate data-delay="200">
+        <div class="milestone-left"><div class="milestone-dot"><span>3</span></div><div class="milestone-line"></div></div>
+        <div class="milestone-content"><span class="milestone-date">2027</span><h4>Funding secured</h4><p>Seed round closed and investor commitments confirmed.</p><span class="milestone-status pending-status">Upcoming</span></div>
+      </div>
+      <div class="milestone pending" data-animate data-delay="300">
+        <div class="milestone-left"><div class="milestone-dot"><span>4</span></div><div class="milestone-line"></div></div>
+        <div class="milestone-content"><span class="milestone-date">2027</span><h4>Location scouted &amp; signed</h4><p>The perfect Bonn address found, surveyed, and lease signed.</p><span class="milestone-status pending-status">Upcoming</span></div>
+      </div>
+      <div class="milestone pending" data-animate data-delay="400">
+        <div class="milestone-left"><div class="milestone-dot"><span>5</span></div><div class="milestone-line"></div></div>
+        <div class="milestone-content"><span class="milestone-date">2027–2028</span><h4>Build &amp; fit-out</h4><p>12-month architectural fit-out with our sustainable design partner.</p><span class="milestone-status pending-status">Upcoming</span></div>
+      </div>
+      <div class="milestone pending last" data-animate data-delay="500">
+        <div class="milestone-left"><div class="milestone-dot home"><svg viewBox="0 0 16 16" fill="none"><path d="M2 8L8 2l6 6M4 6v6h3V9h2v3h3V6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+        <div class="milestone-content"><span class="milestone-date">2028</span><h4>Grand opening</h4><p>The Village opens its doors — founding members enter first, exclusively.</p><span class="milestone-status opening-status">Target opening</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="poll">
+  <div class="container">
+    <div class="poll-inner" data-animate>
+      <p class="eyebrow light">Help us build this</p>
+      <h2>What's missing from<br>your local café?</h2>
+      <p>Real feedback from real parents shapes what we build.</p>
+      <div class="poll-options">
+        <button class="poll-btn" data-answer="comfortable adult seating">Comfortable adult seating</button>
+        <button class="poll-btn" data-answer="safe enclosed play area">Safe enclosed play area</button>
+        <button class="poll-btn" data-answer="space to meet other parents">Space to meet other parents</button>
+        <button class="poll-btn" data-answer="actually good coffee">Actually good coffee</button>
+        <button class="poll-btn" data-answer="changing and feeding facilities">Changing &amp; feeding facilities</button>
+        <button class="poll-btn" data-answer="calm beautiful environment">A calm, beautiful environment</button>
+      </div>
+      <p class="poll-result" id="poll-result"></p>
+    </div>
+  </div>
+</section>
+
+<section id="waitlist">
+  <div class="container">
+    <div class="waitlist-inner" data-animate>
+      <p class="eyebrow terra">Founding 100</p>
+      <h2>Be here before<br>we open the doors</h2>
+      <p class="waitlist-sub">The first 100 people on this list receive a permanent 20% discount on their membership — for life.</p>
+      <div class="founding-box">
+        <div class="fi">🏡</div>
+        <div>
+          <strong>Founding Member Benefit</strong>
+          <p>Lock in a lifetime 20% discount before a single brick is laid. You'll be first to hear about our location reveal, soft launch events, and member preview days. Closes when 100 spots are filled.</p>
+        </div>
+      </div>
+      <!--
+        MAILCHIMP SETUP — 3 steps:
+        1. mailchimp.com → Audience → Signup forms → Embedded forms
+           Copy the form action URL
+        2. Replace "YOUR_MAILCHIMP_FORM_ACTION_URL" with your URL
+        3. Replace "b_XXXX_XXXX" with your honeypot field name from Mailchimp
+      -->
+      <form id="waitlist-form" action="YOUR_MAILCHIMP_FORM_ACTION_URL" method="POST" target="_blank" novalidate>
+        <div style="position:absolute;left:-5000px" aria-hidden="true"><input type="text" name="b_XXXX_XXXX" tabindex="-1" value=""></div>
+        <div class="wl-row">
+          <div class="wl-g"><input type="text" name="FNAME" id="mce-FNAME" placeholder="First name" required /></div>
+          <div class="wl-g"><input type="email" name="EMAIL" id="mce-EMAIL" placeholder="your@email.com" required /></div>
+          <button type="submit" name="subscribe" id="mc-embedded-subscribe" class="btn-primary">Claim my spot</button>
+        </div>
+        <div class="tier-row">
+          <label class="tier-radio"><input type="radio" name="MMERGE2" value="The Neighbor (35)" /><span>The Neighbor · €35</span></label>
+          <label class="tier-radio"><input type="radio" name="MMERGE2" value="The Resident (75)" checked /><span>The Resident · €75</span></label>
+          <label class="tier-radio"><input type="radio" name="MMERGE2" value="The Villager (130)" /><span>The Villager · €130</span></label>
+        </div>
+        <p class="fn">🌿 No spam, ever. Unsubscribe any time.</p>
+      </form>
+      <div class="success-block" id="success-block" style="display:none">
+        <p class="success-icon">🏡</p>
+        <p class="success-title">You're in the village.</p>
+        <p>Check your inbox to confirm your spot. We'll be in touch as we hit each milestone.</p>
+      </div>
+      <p class="wl-count">🌿 Only <strong>100</strong> founding spots available</p>
+    </div>
+  </div>
+</section>
+
+<footer id="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <p class="footer-logo">The Village</p>
+        <p>A sanctuary for parents, a world of play for children. Coming to Bonn, 2028.</p>
+      </div>
+      <div class="footer-links">
+        <h5>Explore</h5>
+        <a href="#play">The Space</a>
+        <a href="#booking">Book a Visit</a>
+        <a href="#pricing">Membership</a>
+        <a href="#timeline">Our Journey</a>
+      </div>
+      <div class="footer-links">
+        <h5>Connect</h5>
+        <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://tiktok.com" target="_blank" rel="noopener">TikTok</a>
+        <a href="mailto:hello@thevillage.cafe">hello@thevillage.cafe</a>
+      </div>
+      <div class="footer-nl">
+        <h5>Stay in the loop</h5>
+        <p>Milestone updates, behind-the-scenes, and early access — straight to your inbox.</p>
+        <button class="btn-outline footer-btn" onclick="smoothTo('waitlist')">Join the waitlist</button>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 The Village Café &amp; Play · Bonn, Germany · Opening 2028</p>
+      <p>Open daily 09:00 – 19:00 · Day visit €9 · hello@thevillage.cafe</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+function smoothTo(id){const el=document.getElementById(id);if(!el)return;window.scrollTo({top:el.getBoundingClientRect().top+window.pageYOffset-72,behavior:'smooth'})}
+const navbar=document.getElementById('navbar');
+window.addEventListener('scroll',()=>{navbar.classList.toggle('scrolled',window.scrollY>20)},{passive:true});
+const hamburger=document.getElementById('hamburger'),navMobile=document.getElementById('nav-mobile');
+hamburger.addEventListener('click',()=>{const o=navMobile.classList.toggle('open'),s=hamburger.querySelectorAll('span');s[0].style.transform=o?'rotate(45deg) translate(5px,5px)':'';s[1].style.opacity=o?'0':'';s[2].style.transform=o?'rotate(-45deg) translate(5px,-5px)':''});
+function closeMenu(){navMobile.classList.remove('open');hamburger.querySelectorAll('span').forEach(s=>{s.style.transform='';s.style.opacity=''})}
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('in-view'),parseInt(e.target.dataset.delay)||0);obs.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('[data-animate]').forEach(el=>obs.observe(el));
+const TOTAL=100,TAKEN=12;
+const heroObs=new IntersectionObserver(entries=>{if(!entries[0].isIntersecting)return;heroObs.disconnect();const c=document.getElementById('spots-count'),f=document.getElementById('progress-fill'),rem=TOTAL-TAKEN;let cur=TOTAL;const iv=setInterval(()=>{cur=Math.max(cur-Math.ceil(TAKEN/30),rem);if(c)c.textContent=cur;if(cur<=rem)clearInterval(iv)},30);setTimeout(()=>{if(f)f.style.width=(TAKEN/TOTAL*100)+'%'},400)},{threshold:.3});
+const heroEl=document.getElementById('hero');if(heroEl)heroObs.observe(heroEl);
+const POLL_KEY='village_poll_v1';
+const pollBtns=document.querySelectorAll('.poll-btn'),pollResult=document.getElementById('poll-result');
+const saved=localStorage.getItem(POLL_KEY);
+if(saved){pollBtns.forEach(b=>{if(b.dataset.answer===saved)b.classList.add('selected')});if(pollResult)pollResult.textContent='Thank you — your answer helps us build the right village. 🌿'}
+pollBtns.forEach(btn=>btn.addEventListener('click',function(){pollBtns.forEach(b=>b.classList.remove('selected'));this.classList.add('selected');localStorage.setItem(POLL_KEY,this.dataset.answer);if(pollResult){pollResult.style.opacity='0';setTimeout(()=>{pollResult.textContent='Thank you — your answer helps us build the right village. 🌿';pollResult.style.opacity='1'},200)}}));
+const kidsSel=document.getElementById('bk-kids'),kidsLbl=document.getElementById('kids-lbl');
+if(kidsSel&&kidsLbl)kidsSel.addEventListener('change',()=>{const n=parseInt(kidsSel.value);kidsLbl.textContent=n===1?'1 child':n+' children'});
+const dateInput=document.getElementById('bk-date');
+if(dateInput){const today=new Date().toISOString().split('T')[0];dateInput.min=today;dateInput.value=today}
+function submitBooking(){
+  const fn=document.getElementById('bk-fname'),ln=document.getElementById('bk-lname'),em=document.getElementById('bk-email'),dt=document.getElementById('bk-date'),tm=document.getElementById('bk-time');
+  let ok=true;
+  [fn,ln,em,dt,tm].forEach(el=>el.classList.remove('error'));
+  if(!fn.value.trim()){fn.classList.add('error');ok=false}
+  if(!ln.value.trim()){ln.classList.add('error');ok=false}
+  if(!em.value.includes('@')){em.classList.add('error');ok=false}
+  if(!dt.value){dt.classList.add('error');ok=false}
+  if(!tm.value){tm.classList.add('error');ok=false}
+  if(!ok)return;
+  const btn=document.getElementById('bk-btn');
+  btn.textContent='Reserving...';btn.disabled=true;
+  setTimeout(()=>{
+    const ref='VLG-'+dt.value.replace(/-/g,'').slice(4)+'-'+Math.random().toString(36).slice(2,6).toUpperCase();
+    document.getElementById('bk-conf-email').textContent=em.value;
+    document.getElementById('bk-ref').textContent='Ref: '+ref;
+    document.getElementById('bk-form-wrap').style.display='none';
+    document.getElementById('bk-success').style.display='block';
+  },900);
+}
+function resetBooking(){
+  document.getElementById('bk-form-wrap').style.display='block';
+  document.getElementById('bk-success').style.display='none';
+  const btn=document.getElementById('bk-btn');btn.textContent='Confirm & Reserve';btn.disabled=false;
+  ['bk-fname','bk-lname','bk-email','bk-time'].forEach(id=>{const el=document.getElementById(id);if(el){el.value='';el.classList.remove('error')}});
+  document.getElementById('bk-date').value=new Date().toISOString().split('T')[0];
+}
+const wlForm=document.getElementById('waitlist-form');
+if(wlForm){wlForm.addEventListener('submit',function(e){const emailEl=document.getElementById('mce-EMAIL');if(!emailEl.value.includes('@')){e.preventDefault();emailEl.style.borderColor='rgba(201,125,96,.7)';emailEl.focus();return}const btn=document.getElementById('mc-embedded-subscribe');if(btn){btn.textContent='Joining...';btn.disabled=true}setTimeout(()=>{wlForm.style.display='none';const sb=document.getElementById('success-block');if(sb)sb.style.display='block'},1800)})}
+const params=new URLSearchParams(window.location.search);
+if(params.has('mc_cid')||params.has('subscribed')){const f=document.getElementById('waitlist-form'),s=document.getElementById('success-block');if(f)f.style.display='none';if(s)s.style.display='block';smoothTo('waitlist')}
+const navLinks=document.querySelectorAll('.nav-links a');
+const sObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){const id=e.target.id;navLinks.forEach(l=>{l.style.color=l.getAttribute('href')==='#'+id?'var(--dark)':''})}})},{threshold:.4,rootMargin:'-64px 0px 0px 0px'});
+document.querySelectorAll('section[id]').forEach(s=>sObs.observe(s));
+console.log('%c🏡 The Village','font-family:Georgia,serif;font-size:22px;color:#C97D60');
+console.log('%cComing to Bonn 2028','font-size:12px;color:#7D8E7E');
+</script>
+</body>
+</html>
