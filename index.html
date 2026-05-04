@@ -389,63 +389,16 @@ blockquote p{font-family:var(--ff-serif);font-size:1.25rem;font-style:italic;col
       <p style="font-size:13px;color:var(--mid)">Come more than 4 times a month? The <strong style="color:var(--dark);font-weight:500">Neighbor membership at €35/mo</strong> pays for itself.</p>
     </div>
 
-    <div class="booking-form-card" data-animate data-delay="150">
+    <div class="booking-form-card calendly-card" data-animate data-delay="150">
       <h4>Reserve your visit</h4>
-      <p class="sub">Confirmation sent to your email instantly.</p>
-      <div id="bk-form-wrap">
-        <div class="ff-row">
-          <div class="ff"><label for="bk-fname">First name</label><input type="text" id="bk-fname" placeholder="Anna" /></div>
-          <div class="ff"><label for="bk-lname">Last name</label><input type="text" id="bk-lname" placeholder="Müller" /></div>
-        </div>
-        <div class="ff"><label for="bk-email">Email address</label><input type="email" id="bk-email" placeholder="anna@example.com" /></div>
-        <div class="ff-row">
-          <div class="ff"><label for="bk-date">Date of visit</label><input type="date" id="bk-date" /></div>
-          <div class="ff">
-            <label for="bk-time">Arrival time</label>
-            <select id="bk-time">
-              <option value="">Choose a slot</option>
-              <option>09:00</option><option>09:30</option><option>10:00</option><option>10:30</option>
-              <option>11:00</option><option>11:30</option><option>12:00</option><option>12:30</option>
-              <option>13:00</option><option>13:30</option><option>14:00</option><option>14:30</option>
-              <option>15:00</option><option>15:30</option><option>16:00</option><option>16:30</option>
-              <option>17:00</option><option>17:30</option><option>18:00</option>
-            </select>
-          </div>
-        </div>
-        <div class="ff">
-          <label for="bk-kids">Number of people</label>
-          <select id="bk-kids">
-            <option value="1">1 Person (€9)</option>
-      <option value="2">2 People (€18)</option>
-      <option value="3">3 People (€27)</option>
-      <option value="4">4 People (€36)</option>
-          </select>
-        </div>
-        <div class="booking-total">
-          <span>Day visit · <span id="kids-lbl">1 child</span></span>
-          <strong></strong>
-        </div>
-        <!-- 
-          ══════════════════════════════════════════════
-          TO TAKE REAL PAYMENTS:
-          1. Create a Stripe account at stripe.com (free)
-          2. Go to Payment Links → Create a link → €9 product
-          3. Replace onclick below with:
-             onclick="window.location.href='https://buy.stripe.com/YOUR_LINK_ID'"
-          Currently shows a confirmation preview — pay on arrival.
-          ══════════════════════════════════════════════
-        -->
-        <button class="btn-primary bk-submit" id="bk-btn" onclick="submitBooking()">Confirm &amp; Reserve</button>
-        <p class="bk-note">No payment taken online — pay on arrival. Free cancellation 24h before.</p>
+      <p class="sub">Pick your date and time — confirmation sent to your email instantly.</p>
+      <!-- Calendly inline embed -->
+      <div
+        class="calendly-inline-widget"
+        data-url="https://calendly.com/thevillagecafenplay-info/30min?hide_gdpr_banner=1&primary_color=7D8E7E"
+        style="min-width:280px;height:660px;">
       </div>
-      <div class="bk-success" id="bk-success">
-        <div class="bk-success-icon">🌿</div>
-        <h4>Your visit is reserved!</h4>
-        <p>Confirmation sent to <strong id="bk-conf-email"></strong>.<br>We can't wait to welcome your family.</p>
-        <div class="bk-ref" id="bk-ref"></div>
-        <br><br>
-        <button class="btn-outline" style="font-size:12px;padding:8px 18px" onclick="resetBooking()">Book another visit</button>
-      </div>
+      <p class="bk-note">🌿 No payment taken online — pay on arrival. Free cancellation 24h before.</p>
     </div>
   </div>
 </section>
@@ -624,7 +577,7 @@ blockquote p{font-family:var(--ff-serif);font-size:1.25rem;font-style:italic;col
         <h5>Connect</h5>
         <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
         <a href="https://tiktok.com" target="_blank" rel="noopener">TikTok</a>
-        <a href="mailto:hello@thevillage.cafe">hello@thevillage.cafe</a>
+        <a href="mailto:info@thevillagecafenplay.de">info@thevillagecafenplay.de</a>
       </div>
       <div class="footer-nl">
         <h5>Stay in the loop</h5>
@@ -634,10 +587,13 @@ blockquote p{font-family:var(--ff-serif);font-size:1.25rem;font-style:italic;col
     </div>
     <div class="footer-bottom">
       <p>© 2025 The Village Café &amp; Play · Bonn, Germany · Opening 2028</p>
-      <p>Open daily 09:00 – 19:00 · Day visit €9 · hello@thevillage.cafe</p>
+      <p>Open daily 09:00 – 19:00 · Day visit €9 · info@thevillagecafenplay.de</p>
     </div>
   </div>
 </footer>
+
+<!-- Calendly widget script -->
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 
 <script>
 function smoothTo(id){const el=document.getElementById(id);if(!el)return;window.scrollTo({top:el.getBoundingClientRect().top+window.pageYOffset-72,behavior:'smooth'})}
@@ -656,37 +612,7 @@ const pollBtns=document.querySelectorAll('.poll-btn'),pollResult=document.getEle
 const saved=localStorage.getItem(POLL_KEY);
 if(saved){pollBtns.forEach(b=>{if(b.dataset.answer===saved)b.classList.add('selected')});if(pollResult)pollResult.textContent='Thank you — your answer helps us build the right village. 🌿'}
 pollBtns.forEach(btn=>btn.addEventListener('click',function(){pollBtns.forEach(b=>b.classList.remove('selected'));this.classList.add('selected');localStorage.setItem(POLL_KEY,this.dataset.answer);if(pollResult){pollResult.style.opacity='0';setTimeout(()=>{pollResult.textContent='Thank you — your answer helps us build the right village. 🌿';pollResult.style.opacity='1'},200)}}));
-const kidsSel=document.getElementById('bk-kids'),kidsLbl=document.getElementById('kids-lbl');
-if(kidsSel&&kidsLbl)kidsSel.addEventListener('change',()=>{const n=parseInt(kidsSel.value);kidsLbl.textContent=n===1?'1 child':n+' children'});
-const dateInput=document.getElementById('bk-date');
-if(dateInput){const today=new Date().toISOString().split('T')[0];dateInput.min=today;dateInput.value=today}
-function submitBooking(){
-  const fn=document.getElementById('bk-fname'),ln=document.getElementById('bk-lname'),em=document.getElementById('bk-email'),dt=document.getElementById('bk-date'),tm=document.getElementById('bk-time');
-  let ok=true;
-  [fn,ln,em,dt,tm].forEach(el=>el.classList.remove('error'));
-  if(!fn.value.trim()){fn.classList.add('error');ok=false}
-  if(!ln.value.trim()){ln.classList.add('error');ok=false}
-  if(!em.value.includes('@')){em.classList.add('error');ok=false}
-  if(!dt.value){dt.classList.add('error');ok=false}
-  if(!tm.value){tm.classList.add('error');ok=false}
-  if(!ok)return;
-  const btn=document.getElementById('bk-btn');
-  btn.textContent='Reserving...';btn.disabled=true;
-  setTimeout(()=>{
-    const ref='VLG-'+dt.value.replace(/-/g,'').slice(4)+'-'+Math.random().toString(36).slice(2,6).toUpperCase();
-    document.getElementById('bk-conf-email').textContent=em.value;
-    document.getElementById('bk-ref').textContent='Ref: '+ref;
-    document.getElementById('bk-form-wrap').style.display='none';
-    document.getElementById('bk-success').style.display='block';
-  },900);
-}
-function resetBooking(){
-  document.getElementById('bk-form-wrap').style.display='block';
-  document.getElementById('bk-success').style.display='none';
-  const btn=document.getElementById('bk-btn');btn.textContent='Confirm & Reserve';btn.disabled=false;
-  ['bk-fname','bk-lname','bk-email','bk-time'].forEach(id=>{const el=document.getElementById(id);if(el){el.value='';el.classList.remove('error')}});
-  document.getElementById('bk-date').value=new Date().toISOString().split('T')[0];
-}
+
 const wlForm=document.getElementById('waitlist-form');
 if(wlForm){wlForm.addEventListener('submit',function(e){const emailEl=document.getElementById('mce-EMAIL');if(!emailEl.value.includes('@')){e.preventDefault();emailEl.style.borderColor='rgba(201,125,96,.7)';emailEl.focus();return}const btn=document.getElementById('mc-embedded-subscribe');if(btn){btn.textContent='Joining...';btn.disabled=true}setTimeout(()=>{wlForm.style.display='none';const sb=document.getElementById('success-block');if(sb)sb.style.display='block'},1800)})}
 const params=new URLSearchParams(window.location.search);
