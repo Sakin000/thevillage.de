@@ -893,6 +893,33 @@ blockquote p {
 }
 .footer-bottom p { font-size: 11px; color: rgba(255,255,255,0.2); }
 
+/* ---- CALENDLY EMBED ---- */
+.calendly-card {
+  padding: 1.75rem 1.75rem 1.25rem;
+  overflow: hidden;
+}
+.calendly-card h4 {
+  font-size: 1.1rem;
+  color: var(--dark);
+  margin-bottom: 0.25rem;
+}
+.calendly-card .sub {
+  font-size: 13px;
+  color: var(--mid);
+  margin-bottom: 1.25rem;
+}
+.calendly-inline-widget {
+  border-radius: 6px;
+  overflow: hidden;
+  border: 0.5px solid var(--light-border);
+}
+/* Stack booking section on smaller screens */
+@media (max-width: 768px) {
+  .booking-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .booking-form-card { position: static; }
+  .calendly-inline-widget { height: 580px !important; }
+}
+
 /* ---- ANIMATIONS ---- */
 [data-animate] {
   opacity: 0;
