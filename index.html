@@ -592,38 +592,6 @@ blockquote p{font-family:var(--ff-serif);font-size:1.25rem;font-style:italic;col
   </div>
 </footer>
 
-<!-- Calendly widget script -->
-<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
-
-<script>
-function smoothTo(id){const el=document.getElementById(id);if(!el)return;window.scrollTo({top:el.getBoundingClientRect().top+window.pageYOffset-72,behavior:'smooth'})}
-const navbar=document.getElementById('navbar');
-window.addEventListener('scroll',()=>{navbar.classList.toggle('scrolled',window.scrollY>20)},{passive:true});
-const hamburger=document.getElementById('hamburger'),navMobile=document.getElementById('nav-mobile');
-hamburger.addEventListener('click',()=>{const o=navMobile.classList.toggle('open'),s=hamburger.querySelectorAll('span');s[0].style.transform=o?'rotate(45deg) translate(5px,5px)':'';s[1].style.opacity=o?'0':'';s[2].style.transform=o?'rotate(-45deg) translate(5px,-5px)':''});
-function closeMenu(){navMobile.classList.remove('open');hamburger.querySelectorAll('span').forEach(s=>{s.style.transform='';s.style.opacity=''})}
-const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('in-view'),parseInt(e.target.dataset.delay)||0);obs.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
-document.querySelectorAll('[data-animate]').forEach(el=>obs.observe(el));
-const TOTAL=100,TAKEN=12;
-const heroObs=new IntersectionObserver(entries=>{if(!entries[0].isIntersecting)return;heroObs.disconnect();const c=document.getElementById('spots-count'),f=document.getElementById('progress-fill'),rem=TOTAL-TAKEN;let cur=TOTAL;const iv=setInterval(()=>{cur=Math.max(cur-Math.ceil(TAKEN/30),rem);if(c)c.textContent=cur;if(cur<=rem)clearInterval(iv)},30);setTimeout(()=>{if(f)f.style.width=(TAKEN/TOTAL*100)+'%'},400)},{threshold:.3});
-const heroEl=document.getElementById('hero');if(heroEl)heroObs.observe(heroEl);
-const POLL_KEY='village_poll_v1';
-const pollBtns=document.querySelectorAll('.poll-btn'),pollResult=document.getElementById('poll-result');
-const saved=localStorage.getItem(POLL_KEY);
-if(saved){pollBtns.forEach(b=>{if(b.dataset.answer===saved)b.classList.add('selected')});if(pollResult)pollResult.textContent='Thank you — your answer helps us build the right village. 🌿'}
-pollBtns.forEach(btn=>btn.addEventListener('click',function(){pollBtns.forEach(b=>b.classList.remove('selected'));this.classList.add('selected');localStorage.setItem(POLL_KEY,this.dataset.answer);if(pollResult){pollResult.style.opacity='0';setTimeout(()=>{pollResult.textContent='Thank you — your answer helps us build the right village. 🌿';pollResult.style.opacity='1'},200)}}));
-
-const wlForm=document.getElementById('waitlist-form');
-if(wlForm){wlForm.addEventListener('submit',function(e){const emailEl=document.getElementById('mce-EMAIL');if(!emailEl.value.includes('@')){e.preventDefault();emailEl.style.borderColor='rgba(201,125,96,.7)';emailEl.focus();return}const btn=document.getElementById('mc-embedded-subscribe');if(btn){btn.textContent='Joining...';btn.disabled=true}setTimeout(()=>{wlForm.style.display='none';const sb=document.getElementById('success-block');if(sb)sb.style.display='block'},1800)})}
-const params=new URLSearchParams(window.location.search);
-if(params.has('mc_cid')||params.has('subscribed')){const f=document.getElementById('waitlist-form'),s=document.getElementById('success-block');if(f)f.style.display='none';if(s)s.style.display='block';smoothTo('waitlist')}
-const navLinks=document.querySelectorAll('.nav-links a');
-const sObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){const id=e.target.id;navLinks.forEach(l=>{l.style.color=l.getAttribute('href')==='#'+id?'var(--dark)':''})}})},{threshold:.4,rootMargin:'-64px 0px 0px 0px'});
-document.querySelectorAll('section[id]').forEach(s=>sObs.observe(s));
-console.log('%c🏡 The Village','font-family:Georgia,serif;font-size:22px;color:#C97D60');
-console.log('%cComing to Bonn 2028','font-size:12px;color:#7D8E7E');
-
- 
 <!-- ===================== IMPRESSUM MODAL ===================== -->
 <div id="impressum-modal" class="legal-modal" role="dialog" aria-modal="true" aria-label="Impressum">
   <div class="legal-modal-box">
@@ -798,6 +766,38 @@ function openModal(id){const m=document.getElementById(id);if(m){m.classList.add
 function closeModal(id){const m=document.getElementById(id);if(m){m.classList.remove('open');document.body.style.overflow=''}}
 document.querySelectorAll('.legal-modal').forEach(m=>{m.addEventListener('click',function(e){if(e.target===this)closeModal(this.id)})});
 document.addEventListener('keydown',function(e){if(e.key==='Escape'){document.querySelectorAll('.legal-modal.open').forEach(m=>closeModal(m.id))}});
+  
+
+<!-- Calendly widget script -->
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
+<script>
+function smoothTo(id){const el=document.getElementById(id);if(!el)return;window.scrollTo({top:el.getBoundingClientRect().top+window.pageYOffset-72,behavior:'smooth'})}
+const navbar=document.getElementById('navbar');
+window.addEventListener('scroll',()=>{navbar.classList.toggle('scrolled',window.scrollY>20)},{passive:true});
+const hamburger=document.getElementById('hamburger'),navMobile=document.getElementById('nav-mobile');
+hamburger.addEventListener('click',()=>{const o=navMobile.classList.toggle('open'),s=hamburger.querySelectorAll('span');s[0].style.transform=o?'rotate(45deg) translate(5px,5px)':'';s[1].style.opacity=o?'0':'';s[2].style.transform=o?'rotate(-45deg) translate(5px,-5px)':''});
+function closeMenu(){navMobile.classList.remove('open');hamburger.querySelectorAll('span').forEach(s=>{s.style.transform='';s.style.opacity=''})}
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('in-view'),parseInt(e.target.dataset.delay)||0);obs.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('[data-animate]').forEach(el=>obs.observe(el));
+const TOTAL=100,TAKEN=12;
+const heroObs=new IntersectionObserver(entries=>{if(!entries[0].isIntersecting)return;heroObs.disconnect();const c=document.getElementById('spots-count'),f=document.getElementById('progress-fill'),rem=TOTAL-TAKEN;let cur=TOTAL;const iv=setInterval(()=>{cur=Math.max(cur-Math.ceil(TAKEN/30),rem);if(c)c.textContent=cur;if(cur<=rem)clearInterval(iv)},30);setTimeout(()=>{if(f)f.style.width=(TAKEN/TOTAL*100)+'%'},400)},{threshold:.3});
+const heroEl=document.getElementById('hero');if(heroEl)heroObs.observe(heroEl);
+const POLL_KEY='village_poll_v1';
+const pollBtns=document.querySelectorAll('.poll-btn'),pollResult=document.getElementById('poll-result');
+const saved=localStorage.getItem(POLL_KEY);
+if(saved){pollBtns.forEach(b=>{if(b.dataset.answer===saved)b.classList.add('selected')});if(pollResult)pollResult.textContent='Thank you — your answer helps us build the right village. 🌿'}
+pollBtns.forEach(btn=>btn.addEventListener('click',function(){pollBtns.forEach(b=>b.classList.remove('selected'));this.classList.add('selected');localStorage.setItem(POLL_KEY,this.dataset.answer);if(pollResult){pollResult.style.opacity='0';setTimeout(()=>{pollResult.textContent='Thank you — your answer helps us build the right village. 🌿';pollResult.style.opacity='1'},200)}}));
+
+const wlForm=document.getElementById('waitlist-form');
+if(wlForm){wlForm.addEventListener('submit',function(e){const emailEl=document.getElementById('mce-EMAIL');if(!emailEl.value.includes('@')){e.preventDefault();emailEl.style.borderColor='rgba(201,125,96,.7)';emailEl.focus();return}const btn=document.getElementById('mc-embedded-subscribe');if(btn){btn.textContent='Joining...';btn.disabled=true}setTimeout(()=>{wlForm.style.display='none';const sb=document.getElementById('success-block');if(sb)sb.style.display='block'},1800)})}
+const params=new URLSearchParams(window.location.search);
+if(params.has('mc_cid')||params.has('subscribed')){const f=document.getElementById('waitlist-form'),s=document.getElementById('success-block');if(f)f.style.display='none';if(s)s.style.display='block';smoothTo('waitlist')}
+const navLinks=document.querySelectorAll('.nav-links a');
+const sObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){const id=e.target.id;navLinks.forEach(l=>{l.style.color=l.getAttribute('href')==='#'+id?'var(--dark)':''})}})},{threshold:.4,rootMargin:'-64px 0px 0px 0px'});
+document.querySelectorAll('section[id]').forEach(s=>sObs.observe(s));
+console.log('%c🏡 The Village','font-family:Georgia,serif;font-size:22px;color:#C97D60');
+console.log('%cComing to Bonn 2028','font-size:12px;color:#7D8E7E');
 </script>
 </body>
 </html>
