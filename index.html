@@ -741,6 +741,11 @@ const sObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isInterse
 document.querySelectorAll('section[id]').forEach(s=>sObs.observe(s));
 console.log('%c🏡 The Village','font-family:Georgia,serif;font-size:22px;color:#C97D60');
 console.log('%cComing to Bonn 2028','font-size:12px;color:#7D8E7E');
+
+function openModal(id){const m=document.getElementById(id);if(m){m.classList.add('open');document.body.style.overflow='hidden'}}
+function closeModal(id){const m=document.getElementById(id);if(m){m.classList.remove('open');document.body.style.overflow=''}}
+document.querySelectorAll('.legal-modal').forEach(m=>{m.addEventListener('click',function(e){if(e.target===this)closeModal(this.id)})});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){document.querySelectorAll('.legal-modal.open').forEach(m=>closeModal(m.id))}});
 </script>
 </body>
 </html>
