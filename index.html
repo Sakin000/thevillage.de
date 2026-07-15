@@ -622,6 +622,181 @@ const sObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isInterse
 document.querySelectorAll('section[id]').forEach(s=>sObs.observe(s));
 console.log('%c🏡 The Village','font-family:Georgia,serif;font-size:22px;color:#C97D60');
 console.log('%cComing to Bonn 2028','font-size:12px;color:#7D8E7E');
+
+<!-- ===================== IMPRESSUM MODAL ===================== -->
+<div id="impressum-modal" class="legal-modal" role="dialog" aria-modal="true" aria-label="Impressum">
+  <div class="legal-modal-box">
+    <button class="legal-modal-close" onclick="closeModal('impressum-modal')" aria-label="Schließen">&times;</button>
+    <h2>Impressum</h2>
+    <p class="legal-sub">Angaben gemäß § 5 TMG</p>
+ 
+    <h4>Betreiber</h4>
+    <p>Shahriar Ahmed<br>
+    The Village Café &amp; Play<br>
+    [Straße und Hausnummer]<br>
+    [PLZ] Bonn<br>
+    Deutschland</p>
+ 
+    <h4>Kontakt</h4>
+    <p>E-Mail: <a href="mailto:info@thevillagecafenplay.de">info@thevillagecafenplay.de</a><br>
+    Telefon: [Ihre Telefonnummer]<br>
+    Website: <a href="https://thevillagecafenplay.de" target="_blank">thevillagecafenplay.de</a></p>
+ 
+    <h4>Umsatzsteuer-Identifikationsnummer</h4>
+    <p>Gemäß § 27a Umsatzsteuergesetz: [USt-IdNr. nach Erhalt eintragen]</p>
+ 
+    <h4>Berufsbezeichnung und berufsrechtliche Regelungen</h4>
+    <p>Betrieb in Gründung – Gewerbeanmeldung erfolgt vor Eröffnung beim zuständigen Gewerbeamt der Stadt Bonn.</p>
+ 
+    <h4>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h4>
+    <p>Shahriar Ahmed<br>
+    [Adresse wie oben]</p>
+ 
+    <h4>Streitschlichtung</h4>
+    <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:
+    <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">https://ec.europa.eu/consumers/odr</a>.<br>
+    Unsere E-Mail-Adresse finden Sie oben im Impressum.<br>
+    Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+ 
+    <h4>Haftung für Inhalte</h4>
+    <p>Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.</p>
+ 
+    <h4>Haftung für Links</h4>
+    <p>Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.</p>
+ 
+    <h4>Urheberrecht</h4>
+    <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.</p>
+  </div>
+</div>
+ 
+<!-- ===================== DATENSCHUTZ MODAL ===================== -->
+<div id="datenschutz-modal" class="legal-modal" role="dialog" aria-modal="true" aria-label="Datenschutzerklärung">
+  <div class="legal-modal-box">
+    <button class="legal-modal-close" onclick="closeModal('datenschutz-modal')" aria-label="Schließen">&times;</button>
+    <h2>Datenschutzerklärung</h2>
+    <p class="legal-sub">Stand: Juli 2025</p>
+ 
+    <h4>1. Verantwortlicher</h4>
+    <p>Shahriar Ahmed · The Village Café &amp; Play · [Adresse] · Bonn · info@thevillagecafenplay.de</p>
+ 
+    <h4>2. Erhebung und Speicherung personenbezogener Daten</h4>
+    <p>Beim Besuch unserer Website werden automatisch folgende Daten durch den Webserver erfasst: IP-Adresse (anonymisiert), Datum und Uhrzeit des Zugriffs, aufgerufene Seite, verwendeter Browser und Betriebssystem. Diese Daten werden ausschließlich zur Sicherstellung des störungsfreien Betriebs der Seite verwendet und nicht an Dritte weitergegeben.</p>
+ 
+    <h4>3. Terminbuchung über Calendly</h4>
+    <p>Für die Buchung von Besuchen nutzen wir den Dienst <strong>Calendly</strong> (Calendly LLC, 271 17th St NW, Atlanta, GA 30363, USA). Bei der Buchung werden Ihr Name, Ihre E-Mail-Adresse sowie der gewählte Termin an Calendly übermittelt und dort verarbeitet. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Vertragsanbahnung). Weitere Informationen finden Sie in der Datenschutzerklärung von Calendly: <a href="https://calendly.com/privacy" target="_blank" rel="noopener">calendly.com/privacy</a>.</p>
+ 
+    <h4>4. E-Mail-Versand über EmailJS</h4>
+    <p>Zur Übermittlung von Buchungsbestätigungen nutzen wir <strong>EmailJS</strong>. Dabei werden Ihr Name, Ihre E-Mail-Adresse und die Buchungsdetails verarbeitet, um Ihnen eine Bestätigungs-E-Mail zuzusenden. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO.</p>
+ 
+    <h4>5. Warteliste / Newsletter (Mailchimp)</h4>
+    <p>Wenn Sie sich für unsere Warteliste anmelden, werden Ihr Name und Ihre E-Mail-Adresse an <strong>Mailchimp</strong> (The Rocket Science Group LLC, 675 Ponce de Leon Ave NE, Atlanta, GA 30308, USA) übermittelt. Die Verarbeitung erfolgt auf Basis Ihrer Einwilligung gemäß Art. 6 Abs. 1 lit. a DSGVO. Sie können Ihre Einwilligung jederzeit widerrufen, indem Sie sich über den Link in der E-Mail abmelden. Datenschutzerklärung Mailchimp: <a href="https://mailchimp.com/legal/privacy/" target="_blank" rel="noopener">mailchimp.com/legal/privacy</a>.</p>
+ 
+    <h4>6. Google Fonts</h4>
+    <p>Diese Website verwendet Google Fonts (Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA). Beim Laden der Seite wird eine Verbindung zu Google-Servern hergestellt, wobei Ihre IP-Adresse übermittelt werden kann. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einheitlicher Darstellung). Weitere Informationen: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>.</p>
+ 
+    <h4>7. Ihre Rechte</h4>
+    <p>Sie haben gemäß DSGVO folgende Rechte:<br>
+    ✦ Auskunft über Ihre gespeicherten Daten (Art. 15)<br>
+    ✦ Berichtigung unrichtiger Daten (Art. 16)<br>
+    ✦ Löschung Ihrer Daten (Art. 17)<br>
+    ✦ Einschränkung der Verarbeitung (Art. 18)<br>
+    ✦ Datenübertragbarkeit (Art. 20)<br>
+    ✦ Widerspruch gegen die Verarbeitung (Art. 21)<br><br>
+    Zur Ausübung Ihrer Rechte wenden Sie sich an: <a href="mailto:info@thevillagecafenplay.de">info@thevillagecafenplay.de</a></p>
+ 
+    <h4>8. Beschwerderecht</h4>
+    <p>Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren. Die zuständige Aufsichtsbehörde für Nordrhein-Westfalen ist:<br><br>
+    Landesbeauftragte für Datenschutz und Informationsfreiheit NRW<br>
+    Postfach 20 04 44 · 40102 Düsseldorf<br>
+    <a href="https://www.ldi.nrw.de" target="_blank" rel="noopener">www.ldi.nrw.de</a></p>
+ 
+    <h4>9. Aktualität</h4>
+    <p>Wir behalten uns vor, diese Datenschutzerklärung bei Bedarf anzupassen. Die jeweils aktuelle Version finden Sie auf dieser Website.</p>
+  </div>
+</div>
+ 
+<style>
+/* ---- FOOTER LEGAL LINKS ---- */
+.footer-legal{margin-top:.6rem;display:flex;align-items:center;gap:.6rem;flex-wrap:wrap}
+.legal-link{background:none;border:none;color:var(--mid);font-size:12px;font-family:var(--ff-sans);cursor:pointer;padding:0;text-decoration:underline;text-underline-offset:3px;transition:color var(--t)}
+.legal-link:hover{color:var(--dark)}
+ 
+/* ---- LEGAL MODALS ---- */
+.legal-modal{display:none;position:fixed;inset:0;z-index:999;background:rgba(42,39,35,.55);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);overflow-y:auto;padding:2rem 1rem}
+.legal-modal.open{display:flex;align-items:flex-start;justify-content:center}
+.legal-modal-box{position:relative;background:#fff;border-radius:16px;max-width:680px;width:100%;padding:3rem 3rem 2.5rem;margin:auto;box-shadow:0 8px 60px rgba(0,0,0,.15)}
+.legal-modal-close{position:absolute;top:1.2rem;right:1.4rem;background:none;border:none;font-size:1.6rem;cursor:pointer;color:var(--mid);line-height:1;transition:color var(--t)}
+.legal-modal-close:hover{color:var(--dark)}
+.legal-modal-box h2{font-family:var(--ff-serif);font-size:1.8rem;color:var(--dark);margin-bottom:.2rem}
+.legal-sub{font-size:12px;color:var(--sage);letter-spacing:.08em;text-transform:uppercase;margin-bottom:2rem}
+.legal-modal-box h4{font-family:var(--ff-sans);font-weight:600;font-size:.85rem;text-transform:uppercase;letter-spacing:.08em;color:var(--dark);margin:1.6rem 0 .4rem}
+.legal-modal-box p{font-size:.9rem;color:var(--mid);line-height:1.75;margin-bottom:.5rem}
+.legal-modal-box a{color:var(--sage-d);text-decoration:underline;text-underline-offset:3px}
+.legal-modal-box a:hover{color:var(--terra)}
+@media(max-width:600px){.legal-modal-box{padding:2rem 1.4rem 2rem}}
+</style>
+ 
+<script>
+function smoothTo(id){const el=document.getElementById(id);if(!el)return;window.scrollTo({top:el.getBoundingClientRect().top+window.pageYOffset-72,behavior:'smooth'})}
+const navbar=document.getElementById('navbar');
+window.addEventListener('scroll',()=>{navbar.classList.toggle('scrolled',window.scrollY>20)},{passive:true});
+const hamburger=document.getElementById('hamburger'),navMobile=document.getElementById('nav-mobile');
+hamburger.addEventListener('click',()=>{const o=navMobile.classList.toggle('open'),s=hamburger.querySelectorAll('span');s[0].style.transform=o?'rotate(45deg) translate(5px,5px)':'';s[1].style.opacity=o?'0':'';s[2].style.transform=o?'rotate(-45deg) translate(5px,-5px)':''});
+function closeMenu(){navMobile.classList.remove('open');hamburger.querySelectorAll('span').forEach(s=>{s.style.transform='';s.style.opacity=''})}
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('in-view'),parseInt(e.target.dataset.delay)||0);obs.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('[data-animate]').forEach(el=>obs.observe(el));
+const TOTAL=100,TAKEN=12;
+const heroObs=new IntersectionObserver(entries=>{if(!entries[0].isIntersecting)return;heroObs.disconnect();const c=document.getElementById('spots-count'),f=document.getElementById('progress-fill'),rem=TOTAL-TAKEN;let cur=TOTAL;const iv=setInterval(()=>{cur=Math.max(cur-Math.ceil(TAKEN/30),rem);if(c)c.textContent=cur;if(cur<=rem)clearInterval(iv)},30);setTimeout(()=>{if(f)f.style.width=(TAKEN/TOTAL*100)+'%'},400)},{threshold:.3});
+const heroEl=document.getElementById('hero');if(heroEl)heroObs.observe(heroEl);
+const POLL_KEY='village_poll_v1';
+const pollBtns=document.querySelectorAll('.poll-btn'),pollResult=document.getElementById('poll-result');
+const saved=localStorage.getItem(POLL_KEY);
+if(saved){pollBtns.forEach(b=>{if(b.dataset.answer===saved)b.classList.add('selected')});if(pollResult)pollResult.textContent='Thank you — your answer helps us build the right village. 🌿'}
+pollBtns.forEach(btn=>btn.addEventListener('click',function(){pollBtns.forEach(b=>b.classList.remove('selected'));this.classList.add('selected');localStorage.setItem(POLL_KEY,this.dataset.answer);if(pollResult){pollResult.style.opacity='0';setTimeout(()=>{pollResult.textContent='Thank you — your answer helps us build the right village. 🌿';pollResult.style.opacity='1'},200)}}));
+const kidsSel=document.getElementById('bk-kids'),kidsLbl=document.getElementById('kids-lbl');
+if(kidsSel&&kidsLbl)kidsSel.addEventListener('change',()=>{const n=parseInt(kidsSel.value);kidsLbl.textContent=n===1?'1 child':n+' children'});
+const dateInput=document.getElementById('bk-date');
+if(dateInput){const today=new Date().toISOString().split('T')[0];dateInput.min=today;dateInput.value=today}
+function submitBooking(){
+  const fn=document.getElementById('bk-fname'),ln=document.getElementById('bk-lname'),em=document.getElementById('bk-email'),dt=document.getElementById('bk-date'),tm=document.getElementById('bk-time');
+  let ok=true;
+  [fn,ln,em,dt,tm].forEach(el=>el.classList.remove('error'));
+  if(!fn.value.trim()){fn.classList.add('error');ok=false}
+  if(!ln.value.trim()){ln.classList.add('error');ok=false}
+  if(!em.value.includes('@')){em.classList.add('error');ok=false}
+  if(!dt.value){dt.classList.add('error');ok=false}
+  if(!tm.value){tm.classList.add('error');ok=false}
+  if(!ok)return;
+  const btn=document.getElementById('bk-btn');
+  btn.textContent='Reserving...';btn.disabled=true;
+  setTimeout(()=>{
+    const ref='VLG-'+dt.value.replace(/-/g,'').slice(4)+'-'+Math.random().toString(36).slice(2,6).toUpperCase();
+    document.getElementById('bk-conf-email').textContent=em.value;
+    document.getElementById('bk-ref').textContent='Ref: '+ref;
+    document.getElementById('bk-form-wrap').style.display='none';
+    document.getElementById('bk-success').style.display='block';
+  },900);
+}
+function resetBooking(){
+  document.getElementById('bk-form-wrap').style.display='block';
+  document.getElementById('bk-success').style.display='none';
+  const btn=document.getElementById('bk-btn');btn.textContent='Confirm & Reserve';btn.disabled=false;
+  ['bk-fname','bk-lname','bk-email','bk-time'].forEach(id=>{const el=document.getElementById(id);if(el){el.value='';el.classList.remove('error')}});
+  document.getElementById('bk-date').value=new Date().toISOString().split('T')[0];
+}
+const wlForm=document.getElementById('waitlist-form');
+if(wlForm){wlForm.addEventListener('submit',function(e){const emailEl=document.getElementById('mce-EMAIL');if(!emailEl.value.includes('@')){e.preventDefault();emailEl.style.borderColor='rgba(201,125,96,.7)';emailEl.focus();return}const btn=document.getElementById('mc-embedded-subscribe');if(btn){btn.textContent='Joining...';btn.disabled=true}setTimeout(()=>{wlForm.style.display='none';const sb=document.getElementById('success-block');if(sb)sb.style.display='block'},1800)})}
+const params=new URLSearchParams(window.location.search);
+if(params.has('mc_cid')||params.has('subscribed')){const f=document.getElementById('waitlist-form'),s=document.getElementById('success-block');if(f)f.style.display='none';if(s)s.style.display='block';smoothTo('waitlist')}
+const navLinks=document.querySelectorAll('.nav-links a');
+const sObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){const id=e.target.id;navLinks.forEach(l=>{l.style.color=l.getAttribute('href')==='#'+id?'var(--dark)':''})}})},{threshold:.4,rootMargin:'-64px 0px 0px 0px'});
+document.querySelectorAll('section[id]').forEach(s=>sObs.observe(s));
+console.log('%c🏡 The Village','font-family:Georgia,serif;font-size:22px;color:#C97D60');
+console.log('%cComing to Bonn 2028','font-size:12px;color:#7D8E7E');
+function openModal(id){const m=document.getElementById(id);if(m){m.classList.add('open');document.body.style.overflow='hidden'}}
+function closeModal(id){const m=document.getElementById(id);if(m){m.classList.remove('open');document.body.style.overflow=''}}
+document.querySelectorAll('.legal-modal').forEach(m=>{m.addEventListener('click',function(e){if(e.target===this)closeModal(this.id)})});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){document.querySelectorAll('.legal-modal.open').forEach(m=>closeModal(m.id))}});
 </script>
 </body>
 </html>
